@@ -80,7 +80,7 @@ function Form() {
     }, [workStore])
 
     return (
-        <div className="con w-full flex flex-col gap-6 px-4">
+        <div className="w-full flex flex-col gap-6 px-4">
             {/* Form Box */}
             <div className="w-full flex flex-col md:flex-row items-start gap-4 justify-between">
                 {/* Input Div */}
@@ -155,17 +155,17 @@ function Form() {
                     <table className="tableres min-w-full text-center text-xs md:text-sm font-semibold ">
                         <thead className="bg-red-300 text-white uppercase">
                             <tr>
-                                <th className="p-2 md:p-3">Employee Name</th>
-                                <th className="p-2 md:p-3">New Task</th>
-                                <th className="p-2 md:p-3">Active Task</th>
-                                <th className="p-2 md:p-3">Completed</th>
-                                <th className="p-2 md:p-3">Failed</th>
+                                <th className="p-2 md:p-3 text-lg">Employee Name</th>
+                                <th className="p-2 md:p-3 text-lg">New Task</th>
+                                <th className="p-2 md:p-3 text-lg">Active Task</th>
+                                <th className="p-2 md:p-3 text-lg">Completed</th>
+                                <th className="p-2 md:p-3 text-lg">Failed</th>
                             </tr>
                         </thead>
                         <tbody className="bg-black text-white">
                             {
                                 taskCount.map((item, index) => (
-                                    <tr className="border-b border-gray-700" key={index}>
+                                    <tr className="border-b border-gray-700 text-lg" key={index}>
                                         <td className="p-2 md:p-3">{item.username}</td>
                                         <td className="p-2 md:p-3 text-cyan-300">{item.newTask}</td>
                                         <td className="p-2 md:p-3 text-yellow-400">{item.active}</td>

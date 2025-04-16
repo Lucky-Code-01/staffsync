@@ -156,7 +156,7 @@ function Task({parentMethod}) {
                 <span className='text-sm lg:text-lg font-semibold'>{item.date}</span>
               </div>
               {/* Detail Div */}
-              <div className='flex flex-col gap-2 mt-2'>
+              <div className='flex flex-col gap-2 mt-2 overflow-y-auto scrollBox'>
                 <h1 className='text-lg lg:text-2xl font-semibold'>{item.title}</h1>
                 <p className="text-xs sm:text-sm lg:text-base mt-1">{item.description}</p>
                 {
