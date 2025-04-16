@@ -160,10 +160,20 @@ function Task({parentMethod}) {
                 <h1 className='text-lg lg:text-2xl font-semibold'>{item.title}</h1>
                 <p className="text-xs sm:text-sm lg:text-base mt-1">{item.description}</p>
                 {
-                acceptTesk[index] !==true ?<button className='bg-blue-400 text-white font-semibold text-sm lg:text-lg px-6 lg:px-8 py-2 rounded mt-2 hover:bg-blue-500 transition-all duration-200' onClick={()=>handleAccept(index,item.id)}>Accept Task</button>:<div className='flex justify-between items-center'>
-                  <button className='bg-emerald-500 py-1 px-2 rounded border-none' onClick={()=>handleComplete(item.id)}>Mark as Complete</button>
-                  <button className='bg-red-600 py-1 px-2 rounded border-none' onClick={()=>handleFail(item.id)}>Mark as Failded</button>
-                </div>
+                acceptTesk[index] !==true ?<button className='bg-blue-400 text-white font-semibold text-sm lg:text-lg px-6 lg:px-8 py-2 rounded mt-2 hover:bg-blue-500 transition-all duration-200' onClick={()=>handleAccept(index,item.id)}>Accept Task</button>:<div className="flex flex-col md:flex-row justify-between items-center gap-2">
+                <button
+                  className="bg-emerald-500 py-2 px-4 rounded border-none text-white w-full md:w-auto"
+                  onClick={() => handleComplete(item.id)}
+                >
+                  Mark as Complete
+                </button>
+                <button
+                  className="bg-red-600 py-2 px-4 rounded border-none text-white w-full md:w-auto"
+                  onClick={() => handleFail(item.id)}
+                >
+                  Mark as Failed
+                </button>
+              </div>
               }
               </div>
             </div>
