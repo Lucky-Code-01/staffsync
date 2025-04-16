@@ -6,7 +6,7 @@ import {useSelector} from 'react-redux';
 function Task({parentMethod}) {
   // function which convert the name
   const handleName = (name)=>{
-    let newName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+    let newName = name?name.charAt(0).toUpperCase() + name.slice(1).toLowerCase():'';
     return newName;
   }
 
