@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useLogin } from '../Store/LoginStore';
+import { ToastContainer } from 'react-toastify';
+import { Msgerror, Msgsuccessfull } from '../Toast/Toast';
 function Login() {
     const {setisLoged} = useLogin();
 
@@ -19,7 +21,12 @@ function Login() {
     }
 
     const handleSave = () => {
-        localStorage.setItem('userinfo', JSON.stringify(forminfo));
+        if(forminfo.username.length <=0 || forminfo.password <=0 ){
+            Msgerror("please enter the information given below");
+        }else{
+            localStorage.setItem('userinfo', JSON.stringify(forminfo));
+            Msgsuccessfull("Login Successfully!!");
+        }
     };
 
     const handleLogin = ()=>{
@@ -69,6 +76,7 @@ function Login() {
 
         <button className='mt-4 bg-emerald-400 py-2 px6 rounded-xl cursor-pointer text-lg font-semibold hover:bg-emerald-600 transition-all' onClick={handleLogin}>LoginIn</button>
       </div>
+      <ToastContainer/>
     </div>
   )
 }
