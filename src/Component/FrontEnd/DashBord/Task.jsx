@@ -16,7 +16,7 @@ function Task({parentMethod}) {
 
   const divColor = ["#059669","#9D159D","#164E63","#F80551","#059669"];
   const logedUser = JSON.parse(localStorage.getItem('userinfo')) || "";
-  const capitalName = logedUser.username || "Unknow";
+  const capitalName = logedUser.username?handleName(logedUser.username) : "Unknow";
   const allResponse = useSelector((state)=>state.task);
   const individualData = allResponse.filter((item)=>item.workUser === capitalName);
   const acceptedWork = new Array(individualData.length);
