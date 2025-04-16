@@ -1,0 +1,3 @@
+.inpdate::-webkit-calendar-picker-indicator {
+    filter: invert(100%); /* Makes the icon white */
+}

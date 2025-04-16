@@ -1,0 +1,10 @@
+.scrollBox::-webkit-scrollbar{
+    display: none;
+}
+
+/* media query  */
+@media (max-width : 640px){
+    .scrollBox{
+        height: 250px;
+    }
+}
