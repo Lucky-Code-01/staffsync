@@ -5,10 +5,14 @@ import 'swiper/css';
 import {useSelector} from 'react-redux';
 function Task({parentMethod}) {
   // function which convert the name
-  const handleName = (name)=>{
-    let newName = name?name.charAt(0).toUpperCase() + name.slice(1).toLowerCase():'';
+  const handleName = (name) => {
+    if (!name || typeof name !== "string") {
+      // Handle invalid or undefined name
+      return "Invalid Name";
+    }
+    let newName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
     return newName;
-  }
+  };
 
   const divColor = ["#059669","#9D159D","#164E63","#F80551","#059669"];
   const logedUser = JSON.parse(localStorage.getItem('userinfo')) || "";
